@@ -1,40 +1,33 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, Code, Rocket, ArrowRight } from "lucide-react";
-
 const Portfolio = () => {
-  const upcomingProjects = [
-    {
-      title: "Personal Finance Tracker",
-      description: "A web application to help users manage their expenses and track financial goals",
-      technologies: ["React", "Node.js", "MongoDB"],
-      status: "Planning Phase",
-      progress: 15
-    },
-    {
-      title: "Task Management System",
-      description: "Collaborative task management tool with real-time updates and team features",
-      technologies: ["JavaScript", "Express", "Socket.io"],
-      status: "In Development",
-      progress: 35
-    },
-    {
-      title: "E-learning Platform",
-      description: "Interactive learning platform with course management and progress tracking",
-      technologies: ["React", "Python", "PostgreSQL"],
-      status: "Research Phase",
-      progress: 10
-    }
-  ];
-
-  return (
-    <section id="portfolio" className="py-20 bg-background">
+  const upcomingProjects = [{
+    title: "Personal Finance Tracker",
+    description: "A web application to help users manage their expenses and track financial goals",
+    technologies: ["React", "Node.js", "MongoDB"],
+    status: "Planning Phase",
+    progress: 15
+  }, {
+    title: "Task Management System",
+    description: "Collaborative task management tool with real-time updates and team features",
+    technologies: ["JavaScript", "Express", "Socket.io"],
+    status: "In Development",
+    progress: 35
+  }, {
+    title: "E-learning Platform",
+    description: "Interactive learning platform with course management and progress tracking",
+    technologies: ["React", "Python", "PostgreSQL"],
+    status: "Research Phase",
+    progress: 10
+  }];
+  return <section id="portfolio" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            My <span className="text-transparent bg-clip-text gradient-primary">Portfolio</span>
+            My <span className="bg-clip-text gradient-primary text-slate-950">Portfolio</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Showcasing my journey of continuous learning and project development
@@ -54,12 +47,9 @@ const Portfolio = () => {
 
         {/* Work in Progress Projects */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {upcomingProjects.map((project, index) => (
-            <Card 
-              key={project.title}
-              className="shadow-elegant hover:shadow-glow transition-all duration-500 transform hover:scale-105 animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+          {upcomingProjects.map((project, index) => <Card key={project.title} className="shadow-elegant hover:shadow-glow transition-all duration-500 transform hover:scale-105 animate-slide-up" style={{
+          animationDelay: `${index * 0.1}s`
+        }}>
               <CardContent className="p-6">
                 
                 {/* Project Header */}
@@ -85,14 +75,9 @@ const Portfolio = () => {
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span 
-                      key={tech}
-                      className="px-2 py-1 bg-secondary text-secondary-foreground text-xs rounded-md"
-                    >
+                  {project.technologies.map(tech => <span key={tech} className="px-2 py-1 bg-secondary text-secondary-foreground text-xs rounded-md">
                       {tech}
-                    </span>
-                  ))}
+                    </span>)}
                 </div>
 
                 {/* Progress */}
@@ -102,10 +87,9 @@ const Portfolio = () => {
                     <span className="text-xs font-medium text-primary">{project.progress}%</span>
                   </div>
                   <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                    <div 
-                      className="h-full gradient-primary rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${project.progress}%` }}
-                    />
+                    <div className="h-full gradient-primary rounded-full transition-all duration-1000 ease-out" style={{
+                  width: `${project.progress}%`
+                }} />
                   </div>
                 </div>
 
@@ -118,8 +102,7 @@ const Portfolio = () => {
                 </div>
 
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Learning Timeline */}
@@ -177,20 +160,15 @@ const Portfolio = () => {
           <p className="text-muted-foreground mb-6">
             Want to collaborate on a project or see my progress?
           </p>
-          <Button 
-            variant="hero" 
-            size="lg"
-            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="group"
-          >
+          <Button variant="hero" size="lg" onClick={() => document.getElementById("contact")?.scrollIntoView({
+          behavior: "smooth"
+        })} className="group">
             Let's Connect
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
 
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Portfolio;
