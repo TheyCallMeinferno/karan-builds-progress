@@ -1,14 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Download, Mail } from "lucide-react";
 import profileImage from "@/assets/karan-profile.jpg";
-
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: "smooth"
+    });
   };
-
-  return (
-    <section className="min-h-screen relative overflow-hidden gradient-hero flex items-center">
+  return <section className="min-h-screen relative overflow-hidden gradient-hero flex items-center">
       {/* Decorative Elements */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float" />
       <div className="absolute top-40 right-20 w-16 h-16 bg-accent/20 rounded-full animate-bounce-gentle" />
@@ -33,9 +32,7 @@ const Hero = () => {
               </span>
             </h1>
             
-            <p className="text-xl lg:text-2xl text-white/90 mb-2 font-medium">
-              Engineering Student | Aspiring Software & Web Developer
-            </p>
+            <p className="text-xl lg:text-2xl text-white/90 mb-2 font-medium">Engineering Student | Software & Web Developer</p>
             
             <p className="text-lg text-white/80 mb-8 max-w-xl">
               Passionate about technology, software development, and problem solving.
@@ -43,22 +40,12 @@ const Hero = () => {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                variant="accent" 
-                size="xl"
-                onClick={() => scrollToSection("portfolio")}
-                className="group"
-              >
+              <Button variant="accent" size="xl" onClick={() => scrollToSection("portfolio")} className="group">
                 View My Work
                 <ChevronDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
               </Button>
               
-              <Button 
-                variant="glass" 
-                size="xl"
-                onClick={() => scrollToSection("contact")}
-                className="group"
-              >
+              <Button variant="glass" size="xl" onClick={() => scrollToSection("contact")} className="group">
                 <Mail className="mr-2 h-5 w-5" />
                 Get In Touch
               </Button>
@@ -75,11 +62,7 @@ const Hero = () => {
               
               {/* Profile Image */}
               <div className="absolute inset-4 rounded-full overflow-hidden shadow-glow">
-                <img 
-                  src={profileImage} 
-                  alt="Karan Jachak - Engineering Student"
-                  className="w-full h-full object-cover"
-                />
+                <img src={profileImage} alt="Karan Jachak - Engineering Student" className="w-full h-full object-cover" />
               </div>
               
               {/* Floating Elements */}
@@ -95,15 +78,10 @@ const Hero = () => {
       
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
-        <button 
-          onClick={() => scrollToSection("about")}
-          className="text-white/70 hover:text-white transition-colors"
-        >
+        <button onClick={() => scrollToSection("about")} className="text-white/70 hover:text-white transition-colors">
           <ChevronDown className="h-8 w-8" />
         </button>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
