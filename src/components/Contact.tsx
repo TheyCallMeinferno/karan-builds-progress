@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, Linkedin, Github, Send, MapPin } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Send, MapPin, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,10 +15,11 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+  const [isLoading, setIsLoading] = useState(false);
   
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic form validation
@@ -29,19 +31,58 @@ const Contact = () => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Message sent successfully!",
-      description: "I'll get back to you as soon as possible."
-    });
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Please enter a valid email address",
+        variant: "destructive"
+      });
+      return;
+    }
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: ""
-    });
+    setIsLoading(true);
+
+    try {
+      // Initialize EmailJS
+      emailjs.init('TH8BDDzJi68KzUYEc');
+
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_gavv2sa',
+        'template_yo60xlc',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Karan Jachak',
+        }
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "I'll get back to you as soon as possible."
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again later or contact me directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -219,9 +260,19 @@ const Contact = () => {
                     variant="hero" 
                     size="lg" 
                     className="w-full group"
+                    disabled={isLoading}
                   >
-                    Send Message
-                    <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </Button>
 
                 </form>
