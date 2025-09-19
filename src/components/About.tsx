@@ -1,15 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Briefcase, Award } from "lucide-react";
-
 const About = () => {
-  return (
-    <section id="about" className="py-20 gradient-subtle">
+  return <section id="about" className="py-20 gradient-subtle">
       <div className="container mx-auto px-6">
         
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            About <span className="text-transparent bg-clip-text gradient-primary">Me</span>
+            About <span className="bg-clip-text gradient-primary text-slate-900">Me</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A passionate engineering student with a keen interest in technology and innovation
@@ -102,8 +100,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
