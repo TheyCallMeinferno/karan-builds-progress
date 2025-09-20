@@ -29,7 +29,7 @@ const Skills = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            My <span className="text-white">Skills</span>
+            My <span className="bg-clip-text gradient-primary text-slate-900">Skills</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A comprehensive toolkit for modern software development and problem-solving
