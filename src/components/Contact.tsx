@@ -103,8 +103,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210",
+      value: "+91 8928324105",
+      href: "tel:+918928324105",
       color: "gradient-accent"
     },
     {
