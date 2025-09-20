@@ -27,7 +27,7 @@ const Portfolio = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            My <span className="bg-clip-text gradient-primary text-slate-950">Portfolio</span>
+            My <span className="bg-clip-text gradient-primary text-gray-950">Portfolio</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Showcasing my journey of continuous learning and project development
