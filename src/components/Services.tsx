@@ -38,7 +38,7 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            My <span className="bg-clip-text gradient-primary text-gray-900">Services</span>
+            My <span className="bg-clip-text gradient-primary text-slate-900">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Comprehensive development solutions to bring your digital ideas to life
