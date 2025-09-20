@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Download, Mail } from "lucide-react";
-import profileImage from "@/assets/karan-profile-new.jpg";
+import profileImage from "@/assets/karan-profile-latest.jpg";
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({
