@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, Code, Rocket, ArrowRight } from "lucide-react";
+import { Clock, Code, ArrowRight } from "lucide-react";
+
 const Portfolio = () => {
   const upcomingProjects = [{
     title: "Personal Finance Tracker",
@@ -21,6 +22,7 @@ const Portfolio = () => {
     status: "Research Phase",
     progress: 10
   }];
+
   return <section id="portfolio" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         
@@ -34,14 +36,11 @@ const Portfolio = () => {
           </p>
         </div>
 
-        {/* Coming Soon Banner */}
-        <div className="text-center mb-12 animate-slide-up">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary/10 to-accent/10 px-8 py-4 rounded-full border border-primary/20">
-            <Rocket className="h-6 w-6 text-primary animate-bounce-gentle" />
-            <span className="text-lg font-semibold text-primary">Projects Coming Soon!</span>
-          </div>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            I'm currently working on several exciting projects. Here's a preview of what's in development:
+        {/* Work in Progress Section Header */}
+        <div className="text-center mb-8 animate-slide-up">
+          <h3 className="text-2xl font-bold text-foreground mb-2">Work in Progress</h3>
+          <p className="text-muted-foreground max-w-xl mx-auto">
+            Here's a preview of what's currently in development:
           </p>
         </div>
 
