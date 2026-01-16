@@ -1,9 +1,10 @@
 export const projects = [
   {
     title: "Recipe App",
-    description: "A dynamic recipe application with search, cuisine filtering, cooking time filters, and detailed recipe views.",
+    description:
+      "A dynamic recipe application with search, cuisine filtering, cooking time filters, and detailed recipe views.",
     tech: ["HTML", "CSS", "JavaScript"],
-    link: "https://thecallmeinferno.github.io/recipe-app/",
+    live: "https://thecallmeinferno.github.io/recipe-app/",
     github: "https://github.com/thecallmeinferno/recipe-app",
     status: "Completed",
   },
