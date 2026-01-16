@@ -1,19 +1,20 @@
 export const projects = [
   {
     title: "Recipe App",
-    description: "Filterable recipe app with search and modal view",
-    tech: ["HTML", "CSS", "JavaScript"],
-    link: "https://thecallmeinferno.github.io/recipe-app/",
-    github: "https://github.com/thecallmeinferno/recipe-app",
+    description:
+      "A dynamic recipe application with search, cuisine filtering, and cooking time filters.",
+    technologies: ["HTML", "CSS", "JavaScript"],
     status: "Completed",
+    live: "https://thecallmeinferno.github.io/recipe-app/",
+    github: "https://github.com/thecallmeinferno/recipe-app",
   },
   {
-    title: "Portfolio Website",
-    description: "Personal portfolio built with React + Vite",
-    tech: ["React", "TypeScript", "Tailwind"],
-    link: "https://karanjachak.me",
-    github: "https://github.com/thecallmeinferno/karan-builds-progress",
+    title: "Personal Portfolio Website",
+    description:
+      "A responsive developer portfolio showcasing projects and ongoing work.",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS"],
     status: "In Progress",
+    live: "https://karanjachak.me",
+    github: "https://github.com/thecallmeinferno/karan-builds-progress",
   },
 ];
-
